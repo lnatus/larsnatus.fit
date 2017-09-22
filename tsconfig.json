@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+      "target": "es5",
+      "out": "src/scripts/dist/app.js",
+      "module": "none",
+      "lib": [
+          "es5",
+          "dom"
+      ]
+  },
+  "include": [
+      "src",
+      "declarations.d.ts"
+  ]
+}
