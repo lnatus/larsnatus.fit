@@ -52,7 +52,7 @@ h2 {
 
 h3 {
   font-family: "Lato-Light", Helvetica, Arial, sans-serif;
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   text-transform: uppercase;
 }
 
@@ -65,12 +65,14 @@ h3 {
 
 a {
   color: #FFF;
+  cursor: pointer;
 }
 
 a:hover,
 a:focus,
 a:active {
   color: #AD3B37;
+  text-decoration: none;
 }
 
 ul {
@@ -81,6 +83,7 @@ ul {
 
 .lnf-logo {
   height: 65px;
+  margin-bottom: 15px;
 }
 
 .btn-lnf {
@@ -111,6 +114,7 @@ ul {
 /* Navigation */
 
 .lnf-nav {
+  max-width: 500px;
   margin-top: 20px;
   font-size: 0.9em;
   border-bottom: 1px solid #AD3B37;
@@ -224,16 +228,18 @@ footer i {
 
 @media (max-width: 80.0rem) {
   h1 {
-    font-size: 5rem;
+    font-size: 2rem;
   }
-}
 
-@media (max-width: 40.0rem) {
-  h1 {
-    font-size: 4rem;
+  h2 {
+    font-size: 1.8rem;
   }
   nav {
     display: none;
+  }
+  header,
+  footer {
+    text-align: center;
   }
 }
 
