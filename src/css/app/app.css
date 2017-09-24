@@ -215,3 +215,22 @@ footer a {
 footer i {
   margin: 0 5px;
 }
+
+/* MEDIA */
+
+@media (max-width: 80.0rem) {
+  h1 {
+    font-size: 5rem;
+  }
+}
+
+@media (max-width: 40.0rem) {
+  h1 {
+    font-size: 4rem;
+  }
+  nav {
+    display: none;
+  }
+}
+
+
