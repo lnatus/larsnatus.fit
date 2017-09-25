@@ -245,9 +245,7 @@ ul {
 .lnf-footer-clean {
   text-align: center;
   padding: 30px 0;
-  position: absolute;
-  bottom: 0;
-  width: 100%;
+  margin-top: 120px;
 }
 
 .lnf-footer-clean p {
@@ -278,5 +276,9 @@ ul {
 
   .lnf-logo {
     margin-bottom: 15px;
+  }
+
+  .lnf-footer-clean {
+    margin-top: 60px;
   }
 }
