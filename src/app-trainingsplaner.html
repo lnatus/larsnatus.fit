@@ -34,35 +34,56 @@
                   <li><a href="index.html#me">ÜBER MICH</a></li>
                   <li><a href="index.html#tn">TRAINING & ERNÄHRUNG</a></li>
                   <li><a href="index.html#services">SERVICES</a></li>
-                  <li><a href="#">APPS</a></li>
+                  <li><a href="apps.html">APPS</a></li>
                 </ul>
               </nav>
             </div>
           </div>
         </div>
       </header>
-      <section class="lnf-app-tiles">
+      <section id="js-lnf-app-trainingsplaner-form" class="lnf-app-trainingsplaner">
         <div class="container">
           <div class="row">
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <a href="app-trainingsplaner.html" class="lnf-app-tile">
-                <i class="fa fa-calendar"></i>
-                <p>TRAININGSPLANER</p>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <a href="app-caloriecalculator.html" class="lnf-app-tile">
-                <i class="fa fa-calculator"></i>
-                <p>KALORIENRECHNER</p>
-              </a>
-            </div>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
-              <a href="app-bodyfatcalculator.html" class="lnf-app-tile">
-                <i class="fa fa-braille"></i>
-                <p>KFA-RECHNER</p>
-              </a>
-            </div>
+            <a href="apps.html" class="lnf-back"><i class="fa fa-arrow-circle-left"></i> ZURÜCK</a>
           </div>
+          <!-- AGE - GENDER -->
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <div class="form-group">
+                <label for="inputAge">Alter</label>
+                <input type="number" class="form-control" id="inputAge" aria-describedby="inputAgeHelp" placeholder="Wie alt bist Du?" min="1" max="100" >
+                <small id="inputAgeHelp" class="form-text text-muted">Bitte geben Dein Alter in Jahren ein.</small>
+              </div>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputGender">Geschlecht</label>
+                  <select class="form-control" id="inputGender" aria-describedby="inputGenderHelp" placeholder="Bist du eine Frau oder eine Mann?">
+                    <option value="women">weiblich</option>
+                    <option value="men">mänlich</option>
+                  </select>
+                  <small id="inputGenderHelp" class="form-text text-muted">Wähle Dein Geschlecht.</small>
+                </div>
+              </div>
+          </div>
+          <!-- SIZE - WEIGHT -->
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputSize">Größe</label>
+                  <input type="number" class="form-control" id="inputSize" aria-describedby="inputSizeHelp" placeholder="Wie groß bist Du?" min="1" max="250" >
+                  <small id="inputSizeHelp" class="form-text text-muted">Bitte geben Deine Größe in Zentimeter ein.</small>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                  <div class="form-group">
+                    <label for="inputSize">Gewicht</label>
+                    <input type="number" class="form-control" id="inputSize" aria-describedby="inputSizeHelp" min="1" step="0.1" max="300" placeholder="Wie schwer bist du?">
+                    <small id="inputAgeHelp" class="form-text text-muted">Bitte gebe dein Gewicht in Kilogramm an.</small>
+                  </div>
+                </div>
+            </div>
+
         </div>
       </section>
       <footer class="lnf-footer-clean">
