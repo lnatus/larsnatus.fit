@@ -6,7 +6,6 @@ namespace LNF {
       public doCardio: boolean
       public showTimeMessage: boolean
 
-
       constructor(restDays: number, doCardio: boolean, showTimeMessage: boolean) {
         this.restDays = restDays
         this.trainDays = 7 - restDays
