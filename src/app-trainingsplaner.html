@@ -73,8 +73,8 @@
                 <div class="form-group">
                   <label for="inputGender">Geschlecht</label>
                   <select class="form-control" id="inputGender" aria-describedby="inputGenderHelp" placeholder="Bist du eine Frau oder eine Mann?">
-                    <option value="women">weiblich</option>
-                    <option value="men">mänlich</option>
+                    <option value="0">Weiblich</option>
+                    <option value="1">Männlich</option>
                   </select>
                   <small id="inputGenderHelp" class="form-text text-muted">Wähle Dein Geschlecht.</small>
                 </div>
@@ -91,9 +91,9 @@
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
                   <div class="form-group">
-                    <label for="inputSize">Gewicht</label>
-                    <input type="number" class="form-control" id="inputSize" aria-describedby="inputSizeHelp" min="1" step="0.1" max="300" placeholder="Wie schwer bist du?">
-                    <small id="inputAgeHelp" class="form-text text-muted">Bitte gebe dein Gewicht in Kilogramm an.</small>
+                    <label for="inputWeight">Gewicht</label>
+                    <input type="number" class="form-control" id="inputWeight" aria-describedby="inputWeightHelp" min="1" step="0.1" max="300" placeholder="Wie schwer bist du?">
+                    <small id="inputWeightHelp" class="form-text text-muted">Bitte gebe dein Gewicht in Kilogramm an.</small>
                   </div>
                 </div>
             </div>
@@ -110,8 +110,8 @@
                   <div class="form-group">
                     <label for="inputWork">Arbeit</label>
                     <select class="form-control" id="inputWork" aria-describedby="inputWorkHelp" placeholder="Wie sehr belastet Dich deine Arbeit?">
-                      <option value="1">Leichte Arbeit (z.B. Büroarbeit)</option>
-                      <option value="2">Moderate Arbeit (z.B. Koch)</option>
+                      <option value="0">Leichte Arbeit (z.B. Büroarbeit)</option>
+                      <option value="1">Moderate Arbeit (z.B. Koch)</option>
                       <option value="2">Schwere Arbeit (z.B. Bauarbeiter)</option>
                     </select>
                     <small id="inputWorkHelp" class="form-text text-muted">Wähle Deine Arbeitsbelastung aus.</small>
@@ -124,8 +124,8 @@
                     <div class="form-group">
                       <label for="inputActivity">Aktivätslevel</label>
                       <select class="form-control" id="inputActivity" aria-describedby="inputActivityHelp" placeholder="Wie aktiv bist du am Tag?">
-                        <option value="1">Wenig Aktiv</option>
-                        <option value="2">Moderate Aktiv (z.B. Joggen) </option>
+                        <option value="0">Wenig Aktiv</option>
+                        <option value="1">Moderate Aktiv (z.B. Joggen) </option>
                         <option value="2">Stark Aktiv (z.B. Fussballspielen)</option>
                       </select>
                       <small id="inputActivityHelp" class="form-text text-muted">Wähle Dein Aktivätslevel aus.</small>
@@ -145,8 +145,8 @@
                       <div class="form-group">
                         <label for="inputRegeneration">Regeneration</label>
                         <select class="form-control" id="inputRegeneration" aria-describedby="inputRegenerationHelp" placeholder="Wie gut erholt sich Dein Körper?">
-                          <option value="1">Gute Regeneration</option>
-                          <option value="2">Moderate Regeneration</option>
+                          <option value="0">Gute Regeneration</option>
+                          <option value="1">Moderate Regeneration</option>
                           <option value="2">Schlechte Regeneration</option>
                         </select>
                         <small id="inputRegenerationHelp" class="form-text text-muted">Wähle Deine Regeneration aus.</small>
@@ -162,7 +162,14 @@
               </div>
               <div class="row">
                 <div class="col">
-                  <a class="btn btn-lnf pull-right">Auswerten</a>
+                  <div id="js-lnf-app-trainingsplaner-error" class="alert alert-danger lnf-hide" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    <strong>Oooops!</strong><span>
+                    Nicht alle Daten wurden korrekt erfasst. Bitte überprüfe Deine Eingabe und versuche es nochmal.</span>
+                    </div>
+                  <a id="lnf-app-trainingsplaner-run" class="btn btn-lnf pull-right">Auswerten</a>
                 </div>
               </div>
         </div>

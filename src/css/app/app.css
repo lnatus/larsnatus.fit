@@ -8,6 +8,11 @@
 .lnf-branding {
   color: #A32E29;
 }
+
+.lnf-hide {
+  display: none;
+}
+
 /* FONTS */
 
 body {
