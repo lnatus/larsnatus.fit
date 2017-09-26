@@ -44,7 +44,21 @@
       <section id="js-lnf-app-trainingsplaner-form" class="lnf-app-trainingsplaner">
         <div class="container">
           <div class="row">
-            <a href="apps.html" class="lnf-back"><i class="fa fa-arrow-circle-left"></i> ZURÜCK</a>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <a href="apps.html" class="lnf-back"><i class="fa fa-arrow-circle-left"></i> ZURÜCK</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+              <div class="lnf-app-heading">
+                <h1>Trainingsplaner</h1>
+                <p>
+                  Fülle die nachfolgenden Felder mit deinen persönlichen Daten aus und finde heraus, welcher Trainingsplan am besten zu Dir passt.
+                  Deine Daten werden nicht an einen Server gesendet oder gespeichert. Verprochen! Also sei rühig ehrlich bei Deiner Eingabe.
+                  Keiner außer Dir kann deine Eingabe sehen!
+                </p>
+              </div>
+            </div>
           </div>
           <!-- AGE - GENDER -->
           <div class="row">
@@ -83,7 +97,74 @@
                   </div>
                 </div>
             </div>
-
+            <!-- BF - WORK -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputBodyFat">Körperfettanteil (KFA)</label>
+                  <input type="number" class="form-control" id="inputBodyFat" aria-describedby="inputBodyFatHelp" placeholder="Was für einen Körperfettanteil hast du?" min="1" max="100" >
+                  <small id="inputBodyFatHelp" class="form-text text-muted">Bitte geben Deinen ungefähren Körperfettanteil in Prozent (%) ein.</small>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                  <div class="form-group">
+                    <label for="inputWork">Arbeit</label>
+                    <select class="form-control" id="inputWork" aria-describedby="inputWorkHelp" placeholder="Wie sehr belastet Dich deine Arbeit?">
+                      <option value="1">Leichte Arbeit (z.B. Büroarbeit)</option>
+                      <option value="2">Moderate Arbeit (z.B. Koch)</option>
+                      <option value="2">Schwere Arbeit (z.B. Bauarbeiter)</option>
+                    </select>
+                    <small id="inputWorkHelp" class="form-text text-muted">Wähle Deine Arbeitsbelastung aus.</small>
+                  </div>
+              </div>
+            </div>
+            <!-- ACTIVITY - EXPERIENCE -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputActivity">Aktivätslevel</label>
+                      <select class="form-control" id="inputActivity" aria-describedby="inputActivityHelp" placeholder="Wie aktiv bist du am Tag?">
+                        <option value="1">Wenig Aktiv</option>
+                        <option value="2">Moderate Aktiv (z.B. Joggen) </option>
+                        <option value="2">Stark Aktiv (z.B. Fussballspielen)</option>
+                      </select>
+                      <small id="inputActivityHelp" class="form-text text-muted">Wähle Dein Aktivätslevel aus.</small>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputExperience">Trainingserfahrung</label>
+                      <input type="number" class="form-control" id="inputExperience" aria-describedby="inputExperienceHelp" placeholder="Wieviele Jahre trainierst du bereits?" min="0" max="100" >
+                      <small id="inputExperienceHelp" class="form-text text-muted">Bitte gebe Deinen Trainingserfahrung in Jahren ein.</small>
+                    </div>
+                  </div>
+              </div>
+              <!-- REGENERATION - TIME -->
+              <div class="row">
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                      <div class="form-group">
+                        <label for="inputRegeneration">Regeneration</label>
+                        <select class="form-control" id="inputRegeneration" aria-describedby="inputRegenerationHelp" placeholder="Wie gut erholt sich Dein Körper?">
+                          <option value="1">Gute Regeneration</option>
+                          <option value="2">Moderate Regeneration</option>
+                          <option value="2">Schlechte Regeneration</option>
+                        </select>
+                        <small id="inputRegenerationHelp" class="form-text text-muted">Wähle Deine Regeneration aus.</small>
+                      </div>
+                  </div>
+                  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                      <div class="form-group">
+                        <label for="inputTime">Zeit</label>
+                        <input type="number" class="form-control" id="inputTime" aria-describedby="inputTimeHelp" placeholder="Wieviele Tage in der Woche hast du Zeit zum Trainieren?" min="0" max="7" >
+                        <small id="inputTimeHelp" class="form-text text-muted">Bitte gebe Die Anzahl der Tage pro Woche ein.</small>
+                      </div>
+                    </div>
+              </div>
+              <div class="row">
+                <div class="col">
+                  <a class="btn btn-lnf pull-right">Auswerten</a>
+                </div>
+              </div>
         </div>
       </section>
       <footer class="lnf-footer-clean">
