@@ -39,19 +39,23 @@ var LNF;
                 var tp = this.mapping[result.trainDays];
                 var bestsTemplate = '';
                 var goodsTemplate = '';
+                var cardioTemplate = '';
                 for (var _i = 0, _a = tp.bests; _i < _a.length; _i++) {
                     var best = _a[_i];
                     bestsTemplate += "<li><i class=\"fa fa-check\"></i><span>" + best + "</span></li>";
                 }
+                if (result.doCardio) {
+                    cardioTemplate = "<h2 class=\"lnf-branding\">Cardio</h2>\n                            <p>\n                              Laut Deiner aktuellen Verfassung solltest du auch Cardio mit in dein Training einbauen.\n                              Schaue Dir hierf\u00FCr den Abschnitt Cardio im Traingshandbuch an, und integriere eine Variante als festen Bestandteil deiner Workouts.\n                            </p>";
+                }
                 if (tp.goods.length) {
-                    goodsTemplate += "<h3>Alternativen</h3>\n          <p>Diese Pl\u00E4ne k\u00E4men als Alternative auch in Frage:</p>\n          <ul class=\"lnf-app-trainingsplaner-goods\">";
+                    goodsTemplate += "<h2 class=\"lnf-branding\">Alternativen</h2>\n          <p>Diese Pl\u00E4ne k\u00E4men als Alternative auch in Frage:</p>\n          <ul class=\"lnf-app-trainingsplaner-goods\">";
                     for (var _b = 0, _c = tp.goods; _b < _c.length; _b++) {
                         var good = _c[_b];
-                        goodsTemplate += "<li><i class=\"fa fa-bullseye\"></i><span>" + good + "</span></li>";
+                        goodsTemplate += "<li><i class=\"fa fa-check\"></i><span>" + good + "</span></li>";
                     }
                     goodsTemplate += "</ul>";
                 }
-                return "<div class=\"lnf-app-trainingsplaner-result\">\n                  <h3>Top Pl\u00E4ne</h3>\n                  <p>Folgende Trainingspl\u00E4ne aus meinem Trainingshandbuch w\u00E4ren f\u00FCr Dich ideal geeignet:</p>\n                  <ul class=\"lnf-app-trainingsplaner-bests\">\n                    " + bestsTemplate + "\n                  </ul>\n                  " + goodsTemplate + "\n                </div>";
+                return "<div class=\"lnf-app-trainingsplaner-result\">\n                  <h2 class=\"lnf-branding\">Top Pl\u00E4ne</h2>\n                  <p>Folgende Trainingspl\u00E4ne aus dem Trainingshandbuch w\u00E4ren f\u00FCr Dich ideal geeignet:</p>\n                  <ul class=\"lnf-app-trainingsplaner-bests\">\n                    " + bestsTemplate + "\n                  </ul>\n                  " + goodsTemplate + "\n                  " + cardioTemplate + "\n                  <a class=\"btn btn-lnf\" href=\"app-trainingsplaner.html\">Erneut Starten</a>\n                </div>";
             };
             TrainingsPlaner.prototype.showError = function () {
                 $('#js-lnf-app-trainingsplaner-error').show();
@@ -110,14 +114,17 @@ var LNF;
                 });
             };
             TrainingsPlaner.prototype.run = function () {
-                var $container = $('#js-lnf-app-trainingsplaner-result')[0];
+                var $resultContainer = $('#js-lnf-app-trainingsplaner-result')[0];
+                var $adContainer = $('#js-lnf-trainingsplaner-book');
+                var $formContainer = $('#js-lnf-app-trainingsplaner-form');
                 var form = this.getFormData();
                 if (form.isValid()) {
                     var result = this.evaluate(form);
                     var template = this.getResultTemplate(result);
-                    $container.innerHTML = template;
-                    $('#js-lnf-trainingsplaner-book').show();
-                    $('#js-lnf-app-trainingsplaner-form').hide();
+                    $resultContainer.innerHTML = template;
+                    $adContainer.show();
+                    $formContainer.hide();
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
                 }
                 else {
                     this.showError();

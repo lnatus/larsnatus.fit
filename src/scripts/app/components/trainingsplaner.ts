@@ -36,28 +36,39 @@ namespace LNF {
 
         let bestsTemplate = ''
         let goodsTemplate = ''
+        let cardioTemplate = ''
 
         for(let best of tp.bests) {
           bestsTemplate += `<li><i class="fa fa-check"></i><span>${best}</span></li>`
         }
 
+        if(result.doCardio) {
+          cardioTemplate = `<h2 class="lnf-branding">Cardio</h2>
+                            <p>
+                              Laut Deiner aktuellen Verfassung solltest du auch Cardio mit in dein Training einbauen.
+                              Schaue Dir hierfür den Abschnitt Cardio im Traingshandbuch an, und integriere eine Variante als festen Bestandteil deiner Workouts.
+                            </p>`
+        }
+
         if(tp.goods.length){
-          goodsTemplate += `<h3>Alternativen</h3>
+          goodsTemplate += `<h2 class="lnf-branding">Alternativen</h2>
           <p>Diese Pläne kämen als Alternative auch in Frage:</p>
           <ul class="lnf-app-trainingsplaner-goods">`
             for(let good of tp.goods) {
-              goodsTemplate += `<li><i class="fa fa-bullseye"></i><span>${good}</span></li>`
+              goodsTemplate += `<li><i class="fa fa-check"></i><span>${good}</span></li>`
             }
           goodsTemplate += `</ul>`
         }
 
         return `<div class="lnf-app-trainingsplaner-result">
-                  <h3>Top Pläne</h3>
-                  <p>Folgende Trainingspläne aus meinem Trainingshandbuch wären für Dich ideal geeignet:</p>
+                  <h2 class="lnf-branding">Top Pläne</h2>
+                  <p>Folgende Trainingspläne aus dem Trainingshandbuch wären für Dich ideal geeignet:</p>
                   <ul class="lnf-app-trainingsplaner-bests">
                     ${bestsTemplate}
                   </ul>
                   ${goodsTemplate}
+                  ${cardioTemplate}
+                  <a class="btn btn-lnf" href="app-trainingsplaner.html">Erneut Starten</a>
                 </div>`
       }
 
@@ -124,15 +135,19 @@ namespace LNF {
       }
 
       public run () {
-        const $container = $('#js-lnf-app-trainingsplaner-result')[0];
+        const $resultContainer = $('#js-lnf-app-trainingsplaner-result')[0];
+        const $adContainer =  $('#js-lnf-trainingsplaner-book')
+        const $formContainer = $('#js-lnf-app-trainingsplaner-form')
+
         const form = this.getFormData()
 
         if(form.isValid()){
           const result = this.evaluate(form)
           const template = this.getResultTemplate(result)
-          $container.innerHTML = template
-          $('#js-lnf-trainingsplaner-book').show()
-          $('#js-lnf-app-trainingsplaner-form').hide()
+          $resultContainer.innerHTML = template
+          $adContainer.show()
+          $formContainer.hide()
+          $("html, body").animate({ scrollTop: 0 }, "slow");
         } else {
           this.showError()
         }
