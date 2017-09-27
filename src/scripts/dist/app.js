@@ -36,7 +36,9 @@ var LNF;
                 return new LNF.Model.Training(age, gender, size, weight, bodyfat, work, activity, experience, regeneration, time);
             };
             TrainingsPlaner.prototype.getResultTemplate = function (result) {
-                var tp = this.mapping[result.trainDays];
+                var tp = result.isBusy()
+                    ? this.mapping[result.time]
+                    : this.mapping[result.trainDays];
                 var bestsTemplate = '';
                 var goodsTemplate = '';
                 var cardioTemplate = '';
@@ -105,8 +107,7 @@ var LNF;
                     restDays += 2;
                 }
                 //TIME
-                showTimeMessage = (7 - restDays > form.time);
-                return new LNF.Model.TrainingResult(restDays, doCardio, showTimeMessage);
+                return new LNF.Model.TrainingResult(restDays, doCardio, form.time);
             };
             TrainingsPlaner.prototype.init = function () {
                 $('#js-lnf-app-trainingsplaner-error button').click(function () {
@@ -140,12 +141,15 @@ var LNF;
     var Model;
     (function (Model) {
         var TrainingResult = (function () {
-            function TrainingResult(restDays, doCardio, showTimeMessage) {
+            function TrainingResult(restDays, doCardio, time) {
                 this.restDays = restDays;
                 this.trainDays = 7 - restDays;
                 this.doCardio = doCardio;
-                this.showTimeMessage = showTimeMessage;
+                this.time = time;
             }
+            TrainingResult.prototype.isBusy = function () {
+                return (7 - this.restDays > this.time);
+            };
             return TrainingResult;
         }());
         Model.TrainingResult = TrainingResult;

@@ -4,13 +4,17 @@ namespace LNF {
       public restDays: number
       public trainDays: number
       public doCardio: boolean
-      public showTimeMessage: boolean
+      public time: number
 
-      constructor(restDays: number, doCardio: boolean, showTimeMessage: boolean) {
+      public isBusy() : boolean {
+        return (7 - this.restDays > this.time)
+      }
+
+      constructor(restDays: number, doCardio: boolean, time: number) {
         this.restDays = restDays
         this.trainDays = 7 - restDays
         this.doCardio = doCardio
-        this.showTimeMessage = showTimeMessage
+        this.time = time
       }
     }
   }

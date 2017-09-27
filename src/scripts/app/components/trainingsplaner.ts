@@ -32,7 +32,9 @@ namespace LNF {
       }
 
       private getResultTemplate(result: LNF.Model.TrainingResult) : string {
-        let tp = this.mapping[result.trainDays];
+        let tp = result.isBusy()
+               ? this.mapping[result.time]
+               : this.mapping[result.trainDays]
 
         let bestsTemplate = ''
         let goodsTemplate = ''
@@ -124,8 +126,7 @@ namespace LNF {
         }
 
         //TIME
-        showTimeMessage = (7 - restDays > form.time)
-        return new LNF.Model.TrainingResult(restDays, doCardio, showTimeMessage)
+        return new LNF.Model.TrainingResult(restDays, doCardio, form.time)
       }
 
       public init () {
