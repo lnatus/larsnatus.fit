@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta id="viewport" name="viewport" content ="width=device-width, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <title>LARS NATUS FITNESS</title>
+    <meta name="author" content="Lars Natus">
+    <meta name="description" content="Alles in Deinem Leben ist eine Reflexion Deiner Entscheidungen. Du willst ein anderes Ergebnis, dann musst du andere Entscheidungen treffen.">
+    <meta name="keywords" content="Lars,Natus,Fitness,Training,Ernährung,Abnehmen,Coaching,Buch,Wettkampf,Bodybuilding">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="images/favicons/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
+    <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/app/app.css" type="text/css">
+    <script type="text/javascript" src="scripts/vendor/jquery/jquery-3.2.1.min.js" ></script>
+    <script type="text/javascript" src="scripts/dist/app.js" ></script>
+    <script src="https://use.fontawesome.com/750cf2a3ef.js"></script>
+  </head>
+  <body>
+    <div class="lnf-apps">
+      <header>
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <a href="index.html">
+                <img class="lnf-logo img-fluid" src="images/lars-natus-fitness-logo.png" alt="LARS NATUS FITNESS" />
+              </a>
+            </div>
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+              <nav class="lnf-nav">
+                <ul>
+                  <li><a href="index.html#start">START</a></li>
+                  <li><a href="index.html#me">ÜBER MICH</a></li>
+                  <li><a href="index.html#tn">TRAINING & ERNÄHRUNG</a></li>
+                  <li><a href="index.html#services">SERVICES</a></li>
+                  <li><a href="apps.html">APPS</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+      </header>
+     <section id="js-lnf-app-nutrition-form" class="lnf-app-nutrition">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+              <a href="apps.html" class="lnf-back"><i class="fa fa-arrow-circle-left"></i> ZURÜCK</a>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+              <div class="lnf-app-heading">
+                <h1>Ernährungsplaner</h1>
+                <p>
+                  Fülle die nachfolgenden Felder mit deinen persönlichen Daten aus und finde heraus, welcher Ernährungsplan am besten zu Dir passt.
+                  Deine Daten werden nicht an einen Server gesendet oder gespeichert. Verprochen! Also sei rühig ehrlich bei Deiner Eingabe.
+                  Keiner außer Dir kann deine Eingabe sehen!
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- AGE - GENDER -->
+          <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputAge">Alter</label>
+                  <input type="number" class="form-control" id="inputAge" aria-describedby="inputAgeHelp" placeholder="Wie alt bist Du?" min="1" max="100" >
+                  <small id="inputAgeHelp" class="form-text text-muted">Bitte geben Dein Alter in Jahren ein.</small>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                  <div class="form-group">
+                    <label for="inputGender">Geschlecht</label>
+                    <select class="form-control" id="inputGender" aria-describedby="inputGenderHelp" placeholder="Bist du eine Frau oder eine Mann?">
+                      <option value="0">Weiblich</option>
+                      <option value="1">Männlich</option>
+                    </select>
+                    <small id="inputGenderHelp" class="form-text text-muted">Wähle Dein Geschlecht.</small>
+                  </div>
+                </div>
+            </div>
+            <!-- SIZE - WEIGHT -->
+            <div class="row">
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputSize">Größe</label>
+                  <input type="number" class="form-control" id="inputSize" aria-describedby="inputSizeHelp" placeholder="Wie groß bist Du?" min="1" max="250" >
+                  <small id="inputSizeHelp" class="form-text text-muted">Bitte geben Deine Größe in Zentimeter ein.</small>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                <div class="form-group">
+                  <label for="inputWeight">Gewicht</label>
+                  <input type="number" class="form-control" id="inputWeight" aria-describedby="inputWeightHelp" min="1" step="0.1" max="300" placeholder="Wie schwer bist du?">
+                  <small id="inputWeightHelp" class="form-text text-muted">Bitte gebe dein Gewicht in Kilogramm an.</small>
+                </div>
+              </div>
+            </div>
+            <!-- ACTIVITY - HABITS -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputActivity">Aktivätslevel</label>
+                      <select class="form-control" id="inputActivity" aria-describedby="inputActivityHelp" placeholder="Wie aktiv bist du am Tag?">
+                        <option value="1.2">Nicht Aktiv</option>
+                        <option vlaue="1.3">Leicht Aktiv (z.B. Spazieren)</option>
+                        <option value="1.4">Moderate Aktiv (z.B. Joggen) </option>
+                        <option value="1.9">Stark Aktiv (z.B. Fussballspielen)</option>
+                      </select>
+                      <small id="inputActivityHelp" class="form-text text-muted">Wähle Dein Aktivätslevel aus.</small>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputHabits">Essgewohnheiten</label>
+                      <select class="form-control" id="inputHabits" aria-describedby="inputHabitsHelp" placeholder="Was isst Du?">
+                        <option value="0">Alles Esser</option>
+                        <option vlaue="1">Vegetaria</option>
+                        <option value="2">Veganer</option>
+                        <option value="3">Sonstige Nahrungsmittelunverträglichkeiten</option>
+                      </select>
+                      <small id="inputHabitsHelp" class="form-text text-muted">Wähle Deine Essgewohnt aus.</small>
+                    </div>
+                </div>
+              </div>
+              <!-- Target  -->
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputTarget">Zielsetzung</label>
+                      <select class="form-control" id="inputTarget" aria-describedby="inputTargetHelp" placeholder="Was ist dein Ziel?">
+                        <option value="0">Allgemeines Wohlbefinden verbessern</option>
+                        <option vlaue="1">Muskelaufbau</option>
+                        <option value="2">Fettreduktion (Abnehmen)</option>
+                      </select>
+                      <small id="inputTargetHelp" class="form-text text-muted">Was ist das Hauptziel das durch eine gezielte Nahrungsumstellung erreicht werden soll?</small>
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6">
+                    <div class="form-group">
+                      <label for="inputDisciplin">Disziplin</label>
+                      <select class="form-control" id="inputDisciplin" aria-describedby="inputDisciplinHelp" placeholder="Was diszipliniert kannst du sein?">
+                        <option value="0">Keine Disziplin</option>
+                        <option vlaue="1">Schwierig mich langfristig zu disziplinieren</option>
+                        <option value="2">Gute Disziplin wenn ich ab und zu eine Ausnahme machen kann</option>
+                        <option value="3">Perfekte Disziplin</option>
+                      </select>
+                      <small id="inputDisciplinHelp" class="form-text text-muted">Wähle Deine Diziplinstärke.</small>
+                    </div>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col">
+                    <div id="js-lnf-app-nutritionplaner-error" class="alert alert-danger lnf-hide" role="alert">
+                      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                      <strong>Oooops!</strong><span>
+                      Nicht alle Daten wurden korrekt erfasst. Bitte überprüfe Deine Eingabe und versuche es nochmal.</span>
+                      </div>
+                    <a id="js-lnf-app-nutritionplaner-run" class="btn btn-lnf pull-right">Auswerten</a>
+                  </div>
+                </div>
+           </div>
+     </section>
+      <footer class="lnf-footer-clean">
+        <p>
+            Design, Artwork and Code made with <i class="fa fa-heart"></i> by Lars Natus<br>
+            &copy; Copyright 2017
+        </p>
+        <a href="impressum">Impressum</a>
+      </footer>
+      </div>
+  </body>
+</html>

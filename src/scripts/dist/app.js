@@ -1,11 +1,53 @@
 var $ = window.$;
 $(document).ready(function () {
     var tp = new LNF.Components.TrainingsPlaner();
+    var np = new LNF.Components.NutritionPlaner();
     tp.init();
-    $('#lnf-app-trainingsplaner-run').click(function () {
+    np.init();
+    $('#js-lnf-app-trainingsplaner-run').click(function () {
         tp.run();
     });
+    $('#js-lnf-app-nutritionplaner-run').click(function () {
+        np.run();
+    });
 });
+var LNF;
+(function (LNF) {
+    var Components;
+    (function (Components) {
+        var NutritionPlaner = (function () {
+            function NutritionPlaner() {
+            }
+            NutritionPlaner.prototype.getFormData = function () {
+                var age = +$('#inputAge').val();
+                var gender = +$('#inputGender').val();
+                var size = +$('#inputSize').val();
+                var weight = +$('#inputWeight').val();
+                var activity = +$('#inputActivity').val();
+                var habits = +$('#inputHabits').val();
+                var target = +$('#inputTarget').val();
+                var disciplin = +$('#inputDisciplin').val();
+                return new LNF.Model.Nutrition(age, gender, size, weight, activity, habits, target, disciplin);
+            };
+            NutritionPlaner.prototype.init = function () {
+                $('#js-lnf-app-nutritionplaner-error button').click(function () {
+                    $('#js-lnf-app-nutritionplaner-error').hide();
+                });
+            };
+            NutritionPlaner.prototype.run = function () {
+                var $resultContainer = $('#js-lnf-app-nutritionplaner-result')[0];
+                var $adContainer = $('#js-lnf-nutritionplaner-book');
+                var $formContainer = $('#js-lnf-app-nutritionplaner-form');
+                var form = this.getFormData();
+                console.log(form);
+                if (form.isValid()) {
+                }
+            };
+            return NutritionPlaner;
+        }());
+        Components.NutritionPlaner = NutritionPlaner;
+    })(Components = LNF.Components || (LNF.Components = {}));
+})(LNF || (LNF = {}));
 var LNF;
 (function (LNF) {
     var Components;
@@ -135,6 +177,35 @@ var LNF;
         }());
         Components.TrainingsPlaner = TrainingsPlaner;
     })(Components = LNF.Components || (LNF.Components = {}));
+})(LNF || (LNF = {}));
+var LNF;
+(function (LNF) {
+    var Model;
+    (function (Model) {
+        var Nutrition = (function () {
+            function Nutrition(age, gender, size, weight, activity, habits, target, disciplin) {
+                this.age = age;
+                this.gender = gender;
+                this.size = size;
+                this.weight = weight;
+                this.activity = activity;
+                this.habits = habits;
+                this.target = target;
+                this.disciplin = disciplin;
+            }
+            Nutrition.prototype.isValid = function () {
+                return this.gender >= 0 &&
+                    this.size > 0 &&
+                    this.weight > 0 &&
+                    this.activity >= 0 &&
+                    this.habits >= 0 &&
+                    this.target >= 0 &&
+                    this.disciplin >= 0;
+            };
+            return Nutrition;
+        }());
+        Model.Nutrition = Nutrition;
+    })(Model = LNF.Model || (LNF.Model = {}));
 })(LNF || (LNF = {}));
 var LNF;
 (function (LNF) {
