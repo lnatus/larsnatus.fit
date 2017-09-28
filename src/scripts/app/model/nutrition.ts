@@ -20,6 +20,12 @@ namespace LNF {
       /* 0 = Bad; 1 = Light; 2 Moderat; 3 Good  */
       public disciplin: number
 
+      /* Calculated */
+      public baseMetabolism: number
+      public totalCalories: number
+      public diatCalories: number
+      public bulkCalories: number
+
       constructor(age: number, gender: number,
         size: number, weight: number, activity: number, habits: number,
         target: number, disciplin: number) {
@@ -31,6 +37,18 @@ namespace LNF {
           this.habits = habits
           this.target = target
           this.disciplin = disciplin
+
+          // WOMEN
+          if(this.gender == 0) {
+            this.baseMetabolism = Math.round(655 + (9.6 * this.weight) + (1.8 * this.size) - (4.7 * this.age))
+          //MEN
+          } else {
+            this.baseMetabolism = Math.round(66 + (13.7 * this.weight) + (5 * this.size) - (6.8 * this.age))
+          }
+
+          this.totalCalories = Math.round((this.baseMetabolism * this.activity))
+          this.diatCalories = Math.round(this.totalCalories - (500 - (this.activity * 80)))
+          this.bulkCalories = Math.round(this.totalCalories + (400 + (this.activity * 80)))
       }
 
       public isValid() : boolean {

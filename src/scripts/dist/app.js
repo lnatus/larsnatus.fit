@@ -29,6 +29,47 @@ var LNF;
                 var disciplin = +$('#inputDisciplin').val();
                 return new LNF.Model.Nutrition(age, gender, size, weight, activity, habits, target, disciplin);
             };
+            NutritionPlaner.prototype.showError = function () {
+                $('#js-lnf-app-nutritionplaner-error').show();
+            };
+            NutritionPlaner.prototype.getResultTemplate = function (nutrition) {
+                var targetCalories;
+                var targetLabel;
+                var targetNutritionPlan;
+                var targetHabits = '';
+                var targetDisciplin = '';
+                switch (nutrition.target) {
+                    case 0:
+                        targetCalories = nutrition.totalCalories;
+                        targetLabel = "Wohlbefinden verbessern";
+                        targetNutritionPlan = "A1 oder A2";
+                        break;
+                    case 1:
+                        targetLabel = "Muskel- und Kraftaufbau";
+                        targetCalories = nutrition.bulkCalories;
+                        targetNutritionPlan = "B1 oder B2";
+                        break;
+                    case 2:
+                        targetLabel = "Fettreduktion (Abnehmen)";
+                        targetCalories = nutrition.diatCalories;
+                        targetNutritionPlan = "C1 oder C2";
+                }
+                switch (nutrition.habits) {
+                    case 1:
+                        targetHabits = "Schaue Dir hierbei auch das spezielle Kapitel für Vegetaria an.";
+                        break;
+                    case 2:
+                        targetHabits = "Schaue Dir hierbei auch das spezielle Kapitel für Veganer an.";
+                        break;
+                    case 3:
+                        targetHabits = "Schaue Dir hierbei auch das spezielle Kapitel bezüglich Nahrungsunverträglichkeiten an.";
+                        break;
+                }
+                if (nutrition.disciplin == 0 || nutrition.disciplin == 1) {
+                    targetDisciplin = "<h2 class=\"lnf-branding\">Motivation und Disziplin</h2>\n                             <p>Da es Dir schwer fallen kann, die n\u00F6tige Disziplin f\u00FCr eine Ern\u00E4hrungsumstellung an den Tag zu legen,\n                             solltest du Dir unbedingt das Kapitel <strong>Motivation und Disziplin</strong> im Ern\u00E4hrungshandbuch anschauen.  </p>";
+                }
+                return "<div class=\"lnf-app-trainingsplaner-result\">\n                  <h2 class=\"lnf-branding\">Kalorien</h2>\n                  <p>Dein Grundumsatz liegt aktuell bei <strong>" + nutrition.baseMetabolism + " kcal/Tag.</strong></p>\n                  <p>Die Gesamtkalorien liegen bei deinem aktuellen Aktivit\u00E4tslevel bei <strong>" + nutrition.totalCalories + " kcal/Tag</strong></p>\n                  <h2 class=\"lnf-branding\">" + targetLabel + "</h2>\n                  <p>\n                    F\u00FCr Deine Zielsetzung <strong>" + targetLabel + "</strong>, solltest du aktuell <strong>" + targetCalories + " kcal/Tag</strong> zu dir nehmen.\n                    Ideal geeignet w\u00E4ren f\u00FCr dich die Ern\u00E4hrungspl\u00E4ne <strong>" + targetNutritionPlan + "</strong> aus dem Ern\u00E4hrungshandbuch.\n                    " + targetHabits + "\n                  </p>\n                  " + targetDisciplin + "\n                  <a class=\"btn btn-lnf\" href=\"app-nutritionplaner.html\">Erneut Starten</a>\n                </div>";
+            };
             NutritionPlaner.prototype.init = function () {
                 $('#js-lnf-app-nutritionplaner-error button').click(function () {
                     $('#js-lnf-app-nutritionplaner-error').hide();
@@ -39,8 +80,15 @@ var LNF;
                 var $adContainer = $('#js-lnf-nutritionplaner-book');
                 var $formContainer = $('#js-lnf-app-nutritionplaner-form');
                 var form = this.getFormData();
-                console.log(form);
                 if (form.isValid()) {
+                    var template = this.getResultTemplate(form);
+                    $resultContainer.innerHTML = template;
+                    $adContainer.show();
+                    $formContainer.hide();
+                    $("html, body").animate({ scrollTop: 0 }, "slow");
+                }
+                else {
+                    this.showError();
                 }
             };
             return NutritionPlaner;
@@ -192,6 +240,16 @@ var LNF;
                 this.habits = habits;
                 this.target = target;
                 this.disciplin = disciplin;
+                // WOMEN
+                if (this.gender == 0) {
+                    this.baseMetabolism = Math.round(655 + (9.6 * this.weight) + (1.8 * this.size) - (4.7 * this.age));
+                }
+                else {
+                    this.baseMetabolism = Math.round(66 + (13.7 * this.weight) + (5 * this.size) - (6.8 * this.age));
+                }
+                this.totalCalories = Math.round((this.baseMetabolism * this.activity));
+                this.diatCalories = Math.round(this.totalCalories - (500 - (this.activity * 80)));
+                this.bulkCalories = Math.round(this.totalCalories + (400 + (this.activity * 80)));
             }
             Nutrition.prototype.isValid = function () {
                 return this.gender >= 0 &&

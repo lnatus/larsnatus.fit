@@ -41,7 +41,7 @@
           </div>
         </div>
       </header>
-     <section id="js-lnf-app-nutrition-form" class="lnf-app-nutrition">
+     <section id="js-lnf-app-nutritionplaner-form" class="lnf-app-nutrition">
         <div class="container">
           <div class="row">
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
@@ -104,7 +104,7 @@
                       <label for="inputActivity">Aktivätslevel</label>
                       <select class="form-control" id="inputActivity" aria-describedby="inputActivityHelp" placeholder="Wie aktiv bist du am Tag?">
                         <option value="1.2">Nicht Aktiv</option>
-                        <option vlaue="1.3">Leicht Aktiv (z.B. Spazieren)</option>
+                        <option value="1.3">Leicht Aktiv (z.B. Spazieren)</option>
                         <option value="1.4">Moderate Aktiv (z.B. Joggen) </option>
                         <option value="1.9">Stark Aktiv (z.B. Fussballspielen)</option>
                       </select>
@@ -116,7 +116,7 @@
                       <label for="inputHabits">Essgewohnheiten</label>
                       <select class="form-control" id="inputHabits" aria-describedby="inputHabitsHelp" placeholder="Was isst Du?">
                         <option value="0">Alles Esser</option>
-                        <option vlaue="1">Vegetaria</option>
+                        <option value="1">Vegetaria</option>
                         <option value="2">Veganer</option>
                         <option value="3">Sonstige Nahrungsmittelunverträglichkeiten</option>
                       </select>
@@ -131,7 +131,7 @@
                       <label for="inputTarget">Zielsetzung</label>
                       <select class="form-control" id="inputTarget" aria-describedby="inputTargetHelp" placeholder="Was ist dein Ziel?">
                         <option value="0">Allgemeines Wohlbefinden verbessern</option>
-                        <option vlaue="1">Muskelaufbau</option>
+                        <option value="1">Muskel- und Kraftaufbau</option>
                         <option value="2">Fettreduktion (Abnehmen)</option>
                       </select>
                       <small id="inputTargetHelp" class="form-text text-muted">Was ist das Hauptziel das durch eine gezielte Nahrungsumstellung erreicht werden soll?</small>
@@ -141,10 +141,9 @@
                     <div class="form-group">
                       <label for="inputDisciplin">Disziplin</label>
                       <select class="form-control" id="inputDisciplin" aria-describedby="inputDisciplinHelp" placeholder="Was diszipliniert kannst du sein?">
-                        <option value="0">Keine Disziplin</option>
-                        <option vlaue="1">Schwierig mich langfristig zu disziplinieren</option>
-                        <option value="2">Gute Disziplin wenn ich ab und zu eine Ausnahme machen kann</option>
-                        <option value="3">Perfekte Disziplin</option>
+                        <option value="0">Schwierig mich langfristig zu disziplinieren</option>
+                        <option value="1">Gute Disziplin wenn ich ab und zu eine Ausnahme machen kann</option>
+                        <option value="2">Perfekte Disziplin</option>
                       </select>
                       <small id="inputDisciplinHelp" class="form-text text-muted">Wähle Deine Diziplinstärke.</small>
                     </div>
@@ -164,6 +163,43 @@
                 </div>
            </div>
      </section>
+      <!-- RESULT CONTAINER -->
+      <div class="container">
+        <div class="row">
+            <div class="col">
+              <div id="js-lnf-app-nutritionplaner-result">
+              </div>
+            </div>
+            <div class="col">
+              <div id="js-lnf-nutritionplaner-book" class="lnf-book lnf-hide">
+                <img class="img-fluid" src="images/books/nutrition-1.png" alt="Ernährungshandbuch" />
+                <div id="training" class="lnf-book-content">
+                <h2>Ernährungshandbuch</h2>
+                <p>
+                  Dein Leitfaden zum leistungsorientierten Ernährungsplan.
+                  Erstelle Dir einen auf deine Bedürfnisse angepassten Ernährungsplan mit Hilfe des von mir erstellten Ernährungshandbuchs selbst.
+                  Du kannst deinen Plan jederzeit anpassen und bist somit bestens ausgerüstet.
+                  Indivduelle Ernährungsplangestaltung zu jeder Zielsetzung.
+                </p>
+                <ul>
+                  <li><i class="fa fa-check"></i><span>Ernährungspläne zum Muskelaufbau</span></li>
+                  <li><i class="fa fa-check"></i><span>Ernährungspläne zur Fettreduktion</span></li>
+                  <li><i class="fa fa-check"></i><span>Vegetaria, Veganer, Allesesser</span></li>
+                  <li><i class="fa fa-check"></i><span>Für Einsteiger und Fortgeschrittene</span></li>
+                  <li><i class="fa fa-check"></i><span>Kostenlose Online-Apps</span></li>
+                </ul>
+                <div class="lnf-price-old">
+                  29,99 &euro;
+                </div>
+                <div class="lnf-price-new">
+                  19,99 &euro;
+                </div>
+                <a class="btn btn-lnf">Jetzt Kaufen</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <footer class="lnf-footer-clean">
         <p>
             Design, Artwork and Code made with <i class="fa fa-heart"></i> by Lars Natus<br>
