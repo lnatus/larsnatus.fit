@@ -118,10 +118,9 @@ ul li i.fa {
 /* NAVIGATION */
 
 .lnf-nav {
-  max-width: 500px;
+  max-width: 100%;
   margin-top: 20px;
-  font-size: 0.9em;
-  border-bottom: 1px solid #AD3B37;
+  border-bottom: 1px solid #AD3B37 ;
 }
 
 .lnf-nav ul li {
@@ -195,6 +194,10 @@ ul li i.fa {
 
 .lnf-book h2 {
   color: #A32E29;
+}
+
+.lnf-book img {
+  margin-top: 60px;
 }
 
 .lnf-book .lnf-price-old {
