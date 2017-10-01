@@ -21,9 +21,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="images/favicons/favicon-16x16.png">
     <link rel="stylesheet" href="css/vendor/bootstrap/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/app/app.css" type="text/css">
-    <link href="sitemap.xml">
     <script type="text/javascript" src="scripts/vendor/jquery/jquery-3.2.1.min.js"></script>
-
     <script type="text/javascript" src="scripts/dist/app.js" ></script>
     <script src="https://use.fontawesome.com/750cf2a3ef.js"></script>
   </head>
@@ -124,7 +122,20 @@
                     Du steckst gerade in einem Plateau und willst weitere Fortschritte machen?
                     In der <strong>kostenlosen</strong> Infografik - Intensitätstechniken - zeige ich Dir einige der bekanntesten Methoden um  das beste aus einer Trainingseinheit zu holen. Lade sie Dir <strong>kostenlos</strong> und <strong>unverbindlich</strong> herunter.
                   </p>
-                  <a class="btn btn-lnf">Jetzt kostenlos Herunterladen</a>
+                  <div class="lnf-form-container">
+                    <p>
+                      Trage Deine Email Adresse in nachfolgendes Feld ein und lade Dir die kostenlose Infografik über
+                      Intensitätstechniken herunter.
+                    </p>
+                    <form name="lnf-contact-form" data-forge-name="lnf-contact-form">
+                      <div class="form-group">
+                        <label for="inputEmail">Email</label>
+                        <input data-forge-name="email" type="email" class="form-control" id="inputEmail" aria-describedby="inputEmailHelp" placeholder="max@muster.de" >
+                        <small id="inputEmailHelp" class="form-text text-muted">Bitte geben Deine Email ein.</small>
+                      </div>
+                      <input type="submit" class="btn btn-lnf" value="Jetzt kostenlos herunterladen">
+                    </form>
+                  </div>
               </div>
               <div class="col-xs-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
                 <img class="img-fluid" src="images/infographic-intensity-technics.png" alt="Infografik Intensitätstechniken" />
