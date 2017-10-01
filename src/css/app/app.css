@@ -4,21 +4,6 @@
   Design, Artwork and Code made with <3 by Lars Natus
 */
 
-/* GENERAL */
-.lnf-branding {
-  color: #A32E29;
-}
-
-.lnf-hide {
-  display: none;
-}
-
-.lnf-apps header,
-.lnf-impressum header {
-  background-image: linear-gradient(-223deg, #A32E29 0%, #772C29 100%);
-  padding: 30px 0;
-}
-
 .lnf-mobile-only {
   display: none;
 }
@@ -119,6 +104,20 @@ ul li i.fa {
   border: 1px solid #AD3B37;
 }
 
+.lnf-branding {
+  color: #A32E29;
+}
+
+.lnf-hide {
+  display: none;
+}
+
+.lnf-apps header,
+.lnf-impressum header {
+  background-image: linear-gradient(-223deg, #A32E29 0%, #772C29 100%);
+  padding: 30px 0;
+}
+
 /* NAVIGATION */
 
 .lnf-nav {
@@ -188,12 +187,18 @@ ul li i.fa {
   margin-bottom: 30px;
 }
 
-.lnf-free .lnf-receipt {
-  margin-bottom: 30px;
-}
-
 .lnf-free h2 {
   color: #A32E29;
+}
+
+.lnf-infographic {
+  margin-bottom: 60px;
+  padding-bottom: 60px;
+  border-bottom: 1px solid #F2F2F2;
+}
+
+.lnf-infographic img {
+  margin-top: 30px;
 }
 
 .lnf-book {
@@ -256,6 +261,11 @@ ul li i.fa {
   cursor: pointer;
   margin-top: 30px;
   display: block;
+}
+
+.lnf-app-tile.lnf-app-tile-small {
+  padding: 40px 0 20px 0;
+  font-size: 0.8rem;
 }
 
 .lnf-app-tile .fa {
