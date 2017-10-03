@@ -1,3 +1,4 @@
 Files
 	sitemap.xml
 	favicon.ico
+  infographics/larsnatus-infografik-1.pdf
