@@ -4,10 +4,6 @@
   Design, Artwork and Code made with <3 by Lars Natus
 */
 
-.lnf-mobile-only {
-  display: none;
-}
-
 /* FONTS */
 
 body {
@@ -68,6 +64,14 @@ ul li i.fa {
   color: #A32E29;
   margin-right: 15px;
   font-size: 1.4em;
+}
+
+.lnf-content-center {
+  text-align: center;
+}
+
+.lnf-mobile-only {
+  display: none;
 }
 
 .lnf-logo {
@@ -159,7 +163,7 @@ ul li i.fa {
 }
 
 .lnf-hero iframe {
-  width: 100%;
+  max-width: 100%;
 }
 
 .lnf-me {
