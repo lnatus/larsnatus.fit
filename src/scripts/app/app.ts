@@ -3,9 +3,11 @@ const { $ } = window
 $(document).ready(() => {
   const tp =  new LNF.Components.TrainingsPlaner()
   const np = new LNF.Components.NutritionPlaner()
+  const cta = new LNF.Components.CallToAction()
 
   tp.init()
   np.init()
+  cta.init()
 
   $('#js-lnf-app-trainingsplaner-run').click(()=>{
     tp.run()
@@ -14,7 +16,6 @@ $(document).ready(() => {
   $('#js-lnf-app-nutritionplaner-run').click(()=>{
     np.run()
   })
-
 
   var $inputInfoEmail = $('#inputInfoEmail')
   var $btnInfoEmail = $('#btnInfoEmail')

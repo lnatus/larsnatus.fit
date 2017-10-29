@@ -2,8 +2,10 @@ var $ = window.$;
 $(document).ready(function () {
     var tp = new LNF.Components.TrainingsPlaner();
     var np = new LNF.Components.NutritionPlaner();
+    var cta = new LNF.Components.CallToAction();
     tp.init();
     np.init();
+    cta.init();
     $('#js-lnf-app-trainingsplaner-run').click(function () {
         tp.run();
     });
@@ -22,6 +24,30 @@ $(document).ready(function () {
         }
     });
 });
+var LNF;
+(function (LNF) {
+    var Components;
+    (function (Components) {
+        var CallToAction = (function () {
+            function CallToAction() {
+                this.fb = "#lnf-cta-fb";
+                this.fbClose = "#lnf-cta-fb-close";
+            }
+            CallToAction.prototype.init = function () {
+                var $fb = $(this.fb);
+                var $fbClose = $(this.fbClose);
+                $fbClose.click(function () {
+                    $fb.slideToggle('slow');
+                });
+                setTimeout(function () {
+                    $fb.slideToggle('slow');
+                }, 30000);
+            };
+            return CallToAction;
+        }());
+        Components.CallToAction = CallToAction;
+    })(Components = LNF.Components || (LNF.Components = {}));
+})(LNF || (LNF = {}));
 var LNF;
 (function (LNF) {
     var Components;
