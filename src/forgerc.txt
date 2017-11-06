@@ -2,6 +2,7 @@ Files
 	sitemap.xml
 	favicon.ico
   infographics/larsnatus-infografik-1.pdf
+	books/LARS-NATUS-FITNESS-Trainingshandbuch.pdf
 	images/lars-natus-fitness-og.png
 	images/favicons/favicon-16x16.png
 	images/favicons/favicon-32x32.png
