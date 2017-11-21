@@ -137,6 +137,17 @@ ul li i.fa {
   padding: 30px 0;
 }
 
+
+.lnf-blog-social-media a {
+  color: #A32E29;
+  font-size: 3rem;
+  margin-left: 15px;
+}
+
+.lnf-blog-social-media a:hover {
+  color: #AD3B37;
+}
+
 /* NAVIGATION */
 
 .lnf-nav {
